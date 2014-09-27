@@ -3,7 +3,7 @@
  *设置系统常量
  *
 */
-define('SITE_URL','http://localhost:80/blog/');
+define('SITE_URL','http://localhost:80/Shop/blog/');
 
 
 define('CSS_URL',SITE_URL."assets/default/css/");   //前台样式目录地址

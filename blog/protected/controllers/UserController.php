@@ -8,7 +8,7 @@
 class UserController extends Controller{
 
 	function actionLogin(){
-
+            //var_dump(Yii::app()->db);
 		//echo'I want to loginSystem';
 		//renderPartial()方法调用视图
 		//$this->renderPartial('login');

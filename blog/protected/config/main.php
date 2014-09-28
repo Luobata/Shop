@@ -61,6 +61,8 @@ return array(
 			'password' => 'ychshe123',
 			'charset' => 'utf8',
                         //把数据表的前缀设置好
+                        'tablePrefix'=>'sw_',
+                        'enableParamLogging'=>true,
 		),
 		
 		'errorHandler'=>array(
@@ -75,11 +77,11 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+				
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				*/
+				
 			),
 		),
 	),

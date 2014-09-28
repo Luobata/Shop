@@ -44,54 +44,31 @@
                         <td>创建时间</td>
                         <td align="center">操作</td>
                     </tr>
+                    <?php
+                    //遍历传递过来的商品变量值
+                    $i=1;
+                    foreach ($goods_infos as $_v) {
+                       
+                    
+                    ?>
                     <tr id="product1">
-                        <td>1</td>
-                        <td><a href="#">苹果（APPLE）iPhone 4S</a></td>
-                        <td>100</td>
-                        <td>3888</td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174034-58977.jpg" height="60" width="60"></td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174034-97960.jpg" height="40" width="40"></td>
-                        <td>苹果apple</td>
-                        <td>2012-10-18 17:40:34</td>
+                        <td><?php echo $i;?></td>
+                        <td><a href="#"><?php  echo$_v->goods_name;?></a></td>
+                        <td><?php echo $_v->goods_number;?></td>
+                        <td>><?php  echo $_v->goods_price; ?></td>
+                        <td><img src="<?php echo $_v->goods_big_img;?>" height="60" width="60"></td>
+                        <td><img src="<?php  echo $_v->goods_small_img;?>" height="40" width="40"></td>
+                        <td><?php  echo $_v->goods_brand_id;?></td>
+                        <td><?php  echo $_v->goods_create_time;?></td>
                         <td><a href="#">修改</a></td>
                         <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
                     </tr>
-                    <tr id="product2">
-                        <td>2</td>
-                        <td><a href="#">苹果（APPLE）iPhone 4</a></td>
-                        <td>100</td>
-                        <td>3100</td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174248-28718.jpg" height="60" width="60"></td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174248-87501.jpg" height="40" width="40"></td>
-                        <td>苹果apple</td>
-                        <td>2012-10-18 17:42:48</td>
-                        <td><a href="#">修改</a></td>
-                        <td><a href="javascript:;" onclick="delete_product(2)">删除</a></td>
-                    </tr>
-                    <tr id="product3">
-                        <td>3</td>
-                        <td><a href="#">苹果（APPLE）iPhone 4 8G版</a></td>
-                        <td>100</td>
-                        <td>1290</td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174346-31424.jpg" height="60" width="60"></td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174346-54660.jpg" height="40" width="40"></td>
-                        <td>苹果apple</td>
-                        <td>2012-10-18 17:43:46</td>
-                        <td><a href="#">修改</a></td>
-                        <td><a href="javascript:;" onclick="delete_product(3)">删除</a></td>
-                    </tr>
-                    <tr id="product4">
-                        <td>4</td>
-                        <td><a href="#">苹果（APPLE）iPhone 4S 16G版</a></td>
-                        <td>100</td>
-                        <td>987</td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174455-91962.jpg" height="60" width="60"></td>
-                        <td><img src="<?php echo BIMG_URL?>20121018-174455-10118.jpg" height="40" width="40"></td>
-                        <td>苹果apple</td>
-                        <td>2012-10-18 17:44:30</td>
-                        <td><a href="./index.php?r=back/goods/update" target="right">修改</a></td>
-                        <td><a href="#" >删除</a></td>
-                    </tr>
+                    <?php
+                     $i++;
+                    
+                    }
+                    ?>
+
                     <tr>
                         <td colspan="20" style="text-align: center;">
                             [1]

@@ -23,6 +23,26 @@ class Goods extends CActiveRecord{
      */
     
     public function tableName() {
-        return 'sw_goods';
+        return '{{goods}}';
+    }
+    
+//    function rules(){
+//        return array(
+//            array('goods_name,goods_price','safe'),
+//        );
+//    }
+//    
+    //对应标签名字
+    
+    function attributeLabels() {
+        return array(
+            'goods_name'=>'商品名称',
+            'goods_weight'=>'商品重量',
+            'goods_price'=>'商品价格',
+            'goods_number'=>'商品数量',
+            'goods_category_id'=>'商品分类',
+            'goods_brand_id'=>'商品品牌',
+            'goods_introduce'=>'商品简介',
+        );
     }
 }

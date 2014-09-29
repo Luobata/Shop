@@ -60,8 +60,8 @@
                         <td><img src="<?php  echo $_v->goods_small_img;?>" height="40" width="40"></td>
                         <td><?php  echo $_v->goods_brand_id;?></td>
                         <td><?php  echo $_v->goods_create_time;?></td>
-                        <td><a href="#">修改</a></td>
-                        <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
+                        <td><a href="./index.php?r=back/goods/update&id=<?php echo $_v->goods_id;?>">修改</a></td>
+                        <td><a href="./index.php?r=back/goods/delete&id=<?php echo $_v->goods_id;?>;" onclick="delete_product(1)">删除</a></td>
                     </tr>
                     <?php
                      $i++;

@@ -9,7 +9,9 @@
 
 
 class Goods extends CActiveRecord{
-    
+
+    public $goods_name;
+
     /**
      * 返回当前模型对象的静态方法
      */

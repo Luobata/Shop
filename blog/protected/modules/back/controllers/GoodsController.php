@@ -32,15 +32,64 @@ class GoodsController extends Controller{
     function actionAdd(){
         
         $goods_model =new Goods();
+        print_r($_POST);
+        //判断表单是否有提交数据
+      
+        if(isset($_POST['Goods'])){
+            //要把从表单提交过来的数据赋予$goods_model里
+            //$goods_model->goods_name=$_POST['Goods']['goods_name'];
+            foreach ($_POST['Goods'] as $_k=>$_v){
+                $goods_model->$_k=$_v;
+            }
+            $goods_model->goods_create_time=time();
+            if($goods_model->save()){
+                //信息添加成功后实现页面重定向(商品列表页面)
+                $this->redirect('./index.php?r=back/goods/show');
+            }
+            
+            }
+        
         $this->renderPartial('add',array('goods_model'=>$goods_model));
     }
     
     /**
      * 商品更新
      */
-    function actionUpdate(){
-        $this->renderPartial('update');
+    function actionUpdate($id){
+        //具体修改哪个信息，需要将信息查询出来
+        //把商品的id信息通过get方式传递过来
+        //根据$id查询被修改商品信息
+        $goods_model=Goods::model();//除了添加数据我们都是用Goods::model()来实例化模型对象
+        $goods_info=$goods_model->findByPk($id);
+        //$goods_info 是一个数据模型对象
+        //创建model对象  
+        //new Goods(); 调用save方法的时候执行instert语句
+        //Goods::model(); 调用save方法的时候执行update语句
+        if(isset($_POST['Goods'])){
+            foreach($_POST['Goods'] as $_k=>$_v){
+                $goods_info->$_k=$_v;
+            }
+            if($goods_info ->save()){
+                $this->redirect('./index.php?r=back/goods/show');
+            }
+        }
+         
+        //把$goods_info 传递到视图
+        $this->renderPartial('update',array('goods_model'=>$goods_info));
     }
+    
+    /**
+     * 删除商品信息
+     */
+    
+    function actionDelete($id){
+        $goods_model=Goods::model();
+        $goods_info=$goods_model->findByPk($id);
+        //通过Delete方法即可删除数据
+        if($goods_info->delete()){
+            $this->redirect('./index.php?r=back/goods/show');
+        }
+        }
     /**
      * 通过model实现数据库添加
      * 测试方法

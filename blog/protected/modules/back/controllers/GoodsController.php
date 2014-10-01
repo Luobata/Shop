@@ -9,7 +9,7 @@ class GoodsController extends Controller{
     /**
      * 商品展示
      */
-    function actionShow(){
+    function actionShowAll(){
         //通过模型model实现数据表信息查询
         //产生模型model对象
         $goods_model=Goods::model();
@@ -25,6 +25,29 @@ class GoodsController extends Controller{
         //值,当前被传递变量的值
         $this->renderPartial('show',array('goods_infos'=>$goods_infos));
     }
+    
+    /**
+     * 商品数据分页显示
+     */
+    function actionShow(){
+        //获得数据模型
+        $goods_model = Goods::model();
+        //1.获得商品总的记录数目
+        $cnt = $goods_model -> count();
+        $per = 10;
+        //2. 实例化分页类对象
+        $page = new Pagination($cnt, $per);
+        //3. 重新按照分页的样式拼装sql语句进行查询
+        $sql = "select * from {{goods}} $page->limit";
+        $goods_infos = $goods_model -> findAllBySql($sql);
+        //4. 获得分页页面列表(需要传递到视图模板里边显示)
+        $page_list = $page->fpage(array(3,4,5,6,7));
+        //调用视图模板，给模板传递数据
+        $this ->renderPartial('show',array('goods_infos'=>$goods_infos,'page_list'=>$page_list));
+    }
+    
+    
+    
     
     /**
      * 商品添加

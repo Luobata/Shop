@@ -71,7 +71,7 @@
 
                     <tr>
                         <td colspan="20" style="text-align: center;">
-                            [1]
+                            <?php echo $page_list;?>
                         </td>
                     </tr>
                 </tbody>

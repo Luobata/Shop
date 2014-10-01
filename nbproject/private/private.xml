@@ -6,8 +6,12 @@
             <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/config/main.php</file>
             <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/modules/back/controllers/GoodsController.php</file>
             <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/models/Goods.php</file>
+            <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/components/Pagination.php</file>
+            <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/models/User.php</file>
             <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/modules/back/views/goods/add.php</file>
             <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/modules/back/views/goods/show.php</file>
+            <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/controllers/UserController.php</file>
+            <file>file:/D:/Software/wamp/wamp/www/Shop/blog/protected/views/User/register.php</file>
         </group>
     </open-files>
 </project-private>
